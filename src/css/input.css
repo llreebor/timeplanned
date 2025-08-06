@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* Variables */
+@theme {
+	/* Container */
+	--container-width-in-figma: 1280px;
+	--container-side-padding: 16px;
+	--container-max-width: calc(
+		var(--container-width-in-figma) + 2 * var(--container-side-padding)
+	);
+
+	/* Fonts */
+	--font-dm_sans: "DM Sans", sans-serif;
+	--font-space_grotesk: "Space Grotesk", sans-serif;
+
+	/* Colors */
+	--color-primary-10: #19141f;
+	--color-primary-20: #251f2e;
+	--color-primary-30: #462673;
+	--color-primary-40: #6317cf;
+	--color-primary-50: #6c0df2;
+	--color-primary-60: #8833ff;
+	--color-primary-70: #9966ff;
+	--color-primary-80: #bb99ff;
+	--color-primary-90: #ddcdfe;
+	--color-primary-95: #f1ebff;
+
+	--color-secondary-10: #331100;
+	--color-secondary-20: #662200;
+	--color-secondary-30: #993300;
+	--color-secondary-40: #c2570a;
+	--color-secondary-50: #ff5500;
+	--color-secondary-60: #ff7733;
+	--color-secondary-70: #ffb266;
+	--color-secondary-80: #ffbb99;
+	--color-secondary-90: #ffddcc;
+	--color-secondary-95: #fff1eb;
+
+	--color-tertiary-10: #064741;
+	--color-tertiary-20: #085e57;
+	--color-tertiary-30: #0f8a80;
+	--color-tertiary-40: #14b89c;
+	--color-tertiary-50: #19e6c4;
+	--color-tertiary-60: #47ebcf;
+	--color-tertiary-70: #8cf2e1;
+	--color-tertiary-80: #a3f5e0;
+	--color-tertiary-90: #d1faf0;
+	--color-tertiary-95: #e8fcf9;
+
+	--color-grey-10: #1a1a1a;
+	--color-grey-20: #333333;
+	--color-grey-30: #4d4d4d;
+	--color-grey-40: #666666;
+	--color-grey-50: #808080;
+	--color-grey-60: #999999;
+	--color-grey-70: #b2b2b2;
+	--color-grey-80: #cccccc;
+	--color-grey-85: #d9d9d9;
+	--color-grey-90: #e5e5e5;
+	--color-grey-95: #f2f2f2;
+
+	/* Gradients */
+	--gradient-profile:
+		0deg, #367d7d 0%, #367d7d 100%, 0deg, #bf4095 0%, #bf4095 100%, 0deg,
+		#cc4d33 0%, #cc4d33 100%, #945eba;
+
+	/* Shadows */
+	--shadow-05: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+	/* Animations */
+	--animate-fadeIn: fadeIn 0.3s ease-out;
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+}
+
+/* Container max-width & paddings */
+@utility container {
+	@apply mx-auto max-w-(--container-max-width) px-(--container-side-padding);
+}
+
+/* Base Elements  */
+@layer base {
+	body {
+		@apply font-dm_sans dark:bg-primary-10;
+	}
+	button {
+		@apply cursor-pointer;
+	}
+	h4 {
+		@apply text-grey-20 font-space_grotesk text-base leading-tight font-bold dark:text-white;
+	}
+	p {
+		@apply text-grey-20 dark:text-white;
+	}
+}
+
+/* Custom Components */
+@layer components {
+	/* Notification */
+	.notification {
+		@apply bg-secondary-50 absolute -top-1 -right-1 flex size-4 items-center justify-center rounded-full border border-white text-[8px] leading-none font-bold text-white;
+	}
+
+	/* Menu */
+	.menu-link {
+		@apply flex items-center gap-3 py-4;
+	}
+
+	.mobile-menu-link {
+		@apply text-grey-20 [.active]:bg-primary-95 flex items-center gap-2 rounded-lg p-2;
+	}
+}
+
+/* Utility Classes */
+@layer utilities {
+}

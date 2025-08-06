@@ -65,8 +65,8 @@
 		#cc4d33 0%, #cc4d33 100%, #945eba;
 
 	/* Shadows */
-	--shadow-05: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-
+	--shadow-header: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+	--shadow-btn: 0 4px 8px 4px rgba(0, 0, 0, 0.15);
 	/* Animations */
 	--animate-fadeIn: fadeIn 0.3s ease-out;
 
@@ -92,6 +92,15 @@
 	}
 	button {
 		@apply cursor-pointer;
+	}
+	h1 {
+		@apply font-space_grotesk text-grey-20 text-[32px] leading-tight font-bold lg:text-[40px] dark:text-white;
+	}
+	h2 {
+		@apply font-space_grotesk text-grey-20 text-2xl leading-tight font-bold lg:text-[32px] dark:text-white;
+	}
+	h3 {
+		@apply font-space_grotesk text-grey-20 text-xl leading-tight font-bold lg:text-2xl dark:text-white;
 	}
 	h4 {
 		@apply text-grey-20 font-space_grotesk text-base leading-tight font-bold dark:text-white;
@@ -134,8 +143,22 @@
 	.breadcrumbs-link {
 		@apply text-grey-30 dark:text-grey-70 dark:hover:text-grey-95 hover:text-grey-10 transition-colors;
 	}
+
+	/* Button */
+	.btn {
+		@apply font-dm_sans inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 pr-6 text-sm font-bold underline transition-all disabled:cursor-not-allowed disabled:opacity-85;
+	}
+	.btn-primary {
+		@apply bg-primary-40 hover:shadow-btn border-primary-40 not-disabled:hover:bg-primary-40 not-disabled:active:bg-primary-50 text-white underline-offset-2;
+	}
+	.btn-secondary {
+		@apply hover:shadow-btn border-grey-30 not-disabled:hover:bg-grey-95 not-disabled:active:bg-grey-90 text-grey-20 bg-white underline-offset-2;
+	}
 }
 
 /* Utility Classes */
 @layer utilities {
+	.with-border {
+		@apply border-grey-70 dark:border-grey-50 border;
+	}
 }

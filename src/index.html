@@ -27,7 +27,9 @@
 		<div class="wrapper flex min-h-full flex-col">
 			<!-- Header  -->
 			<header class="shadow-05 dark:bg-primary-10 bg-white px-4 py-2">
-				<div class="grid grid-cols-[1fr_auto_1fr] items-center gap-x-2">
+				<div
+					class="grid grid-cols-[1fr_auto_1fr] items-center gap-x-2 lg:flex lg:justify-between lg:gap-4"
+				>
 					<!-- Mobile:Burger & Search -->
 					<div class="flex items-center gap-2 lg:hidden">
 						<button id="burger">
@@ -60,7 +62,7 @@
 						</button>
 					</div>
 					<!-- Logo -->
-					<a href="#">
+					<a href="#" class="lg:w-[224px]">
 						<svg
 							width="139"
 							height="23"
@@ -75,11 +77,86 @@
 						</svg>
 					</a>
 					<!-- Search -->
-					<div class="hidden lg:block">
-						<input type="text" placeholder="search" />
+					<div class="hidden min-w-[480px] lg:block xl:min-w-[580px]">
+						<div class="search-input-wrapper relative h-[52px]">
+							<div id="search-input-container" class="search-input-container">
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 20 20"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M8 0C12.4183 0 16 3.58172 16 8C16.0022 9.77666 15.4066 11.5028 14.3096 12.9004L19.71 18.29C19.8993 18.4778 20.0059 18.7334 20.0059 19C20.0059 19.2666 19.8993 19.5222 19.71 19.71C19.5222 19.8993 19.2666 20.0059 19 20.0059C18.7334 20.0059 18.4778 19.8993 18.29 19.71L12.9004 14.3096C11.5028 15.4066 9.77666 16.0022 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2Z"
+										fill="#4D4D4D"
+									/>
+								</svg>
+
+								<input
+									id="searchInput"
+									type="text"
+									placeholder="Search events, people, or dates"
+									class="search-input"
+								/>
+								<button id="clearBtn" class="hidden">
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4.92809 4.93004C8.85188 1.14032 15.0883 1.19477 18.9457 5.05211C22.803 8.90945 22.8574 15.1459 19.0677 19.0697C15.144 22.8594 8.9075 22.8049 5.05016 18.9476C1.19282 15.0903 1.13837 8.85383 4.92809 4.93004ZM17.6576 6.3402C14.5325 3.21856 9.46885 3.22015 6.34605 6.3441C3.22344 9.46804 3.2234 14.5317 6.34605 17.6556C9.46885 20.7796 14.5325 20.7812 17.6576 17.6595C19.1722 16.1656 20.0248 14.1268 20.0248 11.9994C20.0246 9.87215 19.1721 7.83402 17.6576 6.3402ZM14.8382 7.73961C15.0919 7.48617 15.4616 7.38703 15.808 7.47984C16.1544 7.57273 16.4251 7.8434 16.5179 8.1898C16.6107 8.53618 16.5116 8.90588 16.2582 9.15953L13.4076 11.9994L16.2582 14.8402C16.4473 15.0279 16.5541 15.2837 16.5541 15.5502C16.554 15.8167 16.4474 16.0724 16.2582 16.2601C16.0695 16.4472 15.8139 16.5516 15.5482 16.5502C15.2826 16.5517 15.0269 16.4471 14.8382 16.2601L11.9974 13.4095L9.15758 16.2601C8.96889 16.4471 8.71328 16.5517 8.44762 16.5502C8.18193 16.5516 7.92631 16.4472 7.73766 16.2601C7.54842 16.0724 7.44185 15.8167 7.44176 15.5502C7.44176 15.2837 7.54853 15.0279 7.73766 14.8402L10.5882 11.9994L7.73766 9.15953C7.48418 8.90588 7.38508 8.5362 7.47789 8.1898C7.57075 7.84338 7.84143 7.57271 8.18785 7.47984C8.53424 7.38703 8.90393 7.48613 9.15758 7.73961L11.9974 10.5902L14.8382 7.73961Z"
+											fill="#4D4D4D"
+										/>
+									</svg>
+								</button>
+							</div>
+							<div id="dropdown" class="search-dropdown hidden">
+								<p
+									class="border-grey-70 mx-4 border-t py-2 text-sm font-semibold"
+								>
+									Your previous search:
+								</p>
+								<ul class="h-full max-h-[114px] overflow-auto">
+									<li class="cursor-pointer px-4 py-2 hover:bg-gray-100">
+										<p class="text-grey-40 dark:text-grey-95">
+											Search request #1
+										</p>
+									</li>
+									<li class="cursor-pointer px-4 py-2 hover:bg-gray-100">
+										<p class="text-grey-40 dark:text-grey-95">
+											Search request #2
+										</p>
+									</li>
+									<li class="cursor-pointer px-4 py-2 hover:bg-gray-100">
+										<p class="text-grey-40 dark:text-grey-95">
+											Search request #3
+										</p>
+									</li>
+									<li class="cursor-pointer px-4 py-2 hover:bg-gray-100">
+										<p class="text-grey-40 dark:text-grey-95">
+											Search request #4
+										</p>
+									</li>
+									<li class="cursor-pointer px-4 py-2 hover:bg-gray-100">
+										<p class="text-grey-40 dark:text-grey-95">
+											Search request #5
+										</p>
+									</li>
+									<li class="cursor-pointer px-4 py-2 hover:bg-gray-100">
+										<p class="text-grey-40 dark:text-grey-95">
+											Search request #6
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<!-- Profile -->
-					<div class="ml-auto flex items-center gap-4">
+					<div class="ml-auto flex shrink-0 items-center gap-4">
 						<div class="hidden items-center gap-4 lg:flex">
 							<button class="relative">
 								<svg
@@ -231,7 +308,59 @@
 			</header>
 
 			<!-- Main Content -->
-			<main class="flex-auto"></main>
+			<main class="flex-auto">
+				<section>
+					<div class="flex h-full gap-4">
+						<div class="hidden w-[224px] bg-red-600 lg:block">MENU</div>
+						<div class="w-full p-4 lg:px-10">
+							<div class="max-w-[722px]">
+								<!-- [START] HTML Breadcrumbs -->
+								<nav role="navigation">
+									<ul class="breadcrumbs flex flex-wrap items-center">
+										<li class="breadcrumbs-item">
+											<a class="breadcrumbs-link" href="#" aria-current="page">
+												Home
+											</a>
+											<svg
+												class="block"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M9.75781 7.03035C10.1043 6.9375 10.4749 7.03645 10.7285 7.29011L14.6982 11.2901C14.8875 11.4779 14.9941 11.7335 14.9941 12.0001C14.9941 12.2666 14.8875 12.5223 14.6982 12.71L10.6982 16.71C10.512 16.8948 10.2604 16.999 9.99805 17.0001C9.73224 17.0016 9.4768 16.8972 9.28809 16.71C9.0988 16.5223 8.99219 16.2667 8.99219 16.0001C8.99221 15.7335 9.09879 15.4779 9.28809 15.2901L12.5781 12.0001L9.30762 8.71003C9.05419 8.45641 8.95509 8.08666 9.04785 7.74031C9.14067 7.39392 9.41148 7.12328 9.75781 7.03035Z"
+													class="fill-grey-30 dark:fill-grey-80"
+												/>
+											</svg>
+										</li>
+										<li class="breadcrumbs-item">
+											<a class="breadcrumbs-link" href="#" aria-current="page">
+												Home
+											</a>
+											<svg
+												class="block"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M9.75781 7.03035C10.1043 6.9375 10.4749 7.03645 10.7285 7.29011L14.6982 11.2901C14.8875 11.4779 14.9941 11.7335 14.9941 12.0001C14.9941 12.2666 14.8875 12.5223 14.6982 12.71L10.6982 16.71C10.512 16.8948 10.2604 16.999 9.99805 17.0001C9.73224 17.0016 9.4768 16.8972 9.28809 16.71C9.0988 16.5223 8.99219 16.2667 8.99219 16.0001C8.99221 15.7335 9.09879 15.4779 9.28809 15.2901L12.5781 12.0001L9.30762 8.71003C9.05419 8.45641 8.95509 8.08666 9.04785 7.74031C9.14067 7.39392 9.41148 7.12328 9.75781 7.03035Z"
+													class="fill-grey-30 dark:fill-grey-80"
+												/>
+											</svg>
+										</li>
+									</ul>
+								</nav>
+								<!-- [END] HTML Breadcrumbs -->
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
 
 			<!-- Footer -->
 			<footer class="flex h-40 items-center justify-center bg-slate-300">

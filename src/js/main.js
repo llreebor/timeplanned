@@ -71,3 +71,50 @@ const toggleMode = document.getElementById("toggle-mode")
 toggleMode.addEventListener("click", () => {
 	document.documentElement.classList.toggle("dark")
 })
+
+// Searchbar
+function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
+	const searchInput = document.getElementById(inputId)
+	const dropdown = document.getElementById(dropdownId)
+	const clearBtn = document.getElementById(clearBtnId)
+	const container = document.getElementById(containerId)
+
+	if (!searchInput || !dropdown || !clearBtn) {
+		console.error("initSearchBar: один из элементов не найден")
+		return
+	}
+
+	// Показывать dropdown при вводе
+	searchInput.addEventListener("input", () => {
+		if (searchInput.value.trim() !== "") {
+			dropdown.classList.remove("hidden")
+			clearBtn.classList.remove("hidden")
+			container.classList.add("active")
+		} else {
+			dropdown.classList.add("hidden")
+			clearBtn.classList.add("hidden")
+			container.classList.remove("active")
+		}
+	})
+
+	// Очистка инпута
+	clearBtn.addEventListener("click", () => {
+		searchInput.value = ""
+		dropdown.classList.add("hidden")
+		clearBtn.classList.add("hidden")
+		container.classList.remove("active")
+		searchInput.focus()
+	})
+
+	// Закрытие при клике вне
+	document.addEventListener("click", (e) => {
+		if (
+			!e.target.closest(`#${inputId}`) &&
+			!e.target.closest(`#${dropdownId}`)
+		) {
+			dropdown.classList.add("hidden")
+			container.classList.remove("active")
+		}
+	})
+}
+initSearchBar("search-input-container", "searchInput", "dropdown", "clearBtn")

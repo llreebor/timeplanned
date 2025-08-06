@@ -112,9 +112,27 @@
 	.menu-link {
 		@apply flex items-center gap-3 py-4;
 	}
-
 	.mobile-menu-link {
 		@apply text-grey-20 [.active]:bg-primary-95 flex items-center gap-2 rounded-lg p-2;
+	}
+
+	/* Search Input */
+	.search-input-container {
+		@apply [.active]:border-primary-40 focus-within:border-primary-40 border-grey-70 flex w-full items-center rounded-full border px-4 py-3 transition [.active]:rounded-t-3xl [.active]:rounded-b-none [.active]:border-2 [.active]:border-b-transparent;
+	}
+	.search-input {
+		@apply flex w-full pl-4 outline-none;
+	}
+	.search-dropdown {
+		@apply border-primary-40 absolute top-full right-0 left-0 z-0 -mt-[2px] w-full overflow-hidden rounded-b-3xl border-2 border-t-0 bg-white pb-2;
+	}
+
+	/* Breadcrumbs */
+	.breadcrumbs-item {
+		@apply last:[&_a]:hover:text-grey-30! dark:last:[&_a]:hover:text-grey-70! flex items-center text-sm font-semibold last:hover:text-current last:[&_a]:cursor-default [&_svg]:mx-2 [&_svg]:shrink-0 last:[&_svg]:hidden!;
+	}
+	.breadcrumbs-link {
+		@apply text-grey-30 dark:text-grey-70 dark:hover:text-grey-95 hover:text-grey-10 transition-colors;
 	}
 }
 

@@ -7,7 +7,7 @@ function initializeMobile() {
 	const body = document.querySelector("body")
 
 	// Define mobile breakpoint for responsive behavior
-	const MOBILE_BREAKPOINT = 992
+	const MOBILE_BREAKPOINT = 1024
 
 	// Exit if required elements are missing
 	if (!menu || !burger || !body || !overlay) return
@@ -62,15 +62,43 @@ function initializeMobile() {
 	burger.setAttribute("aria-expanded", "false")
 	handleWindowResize()
 }
-
-// Run initialization
 initializeMobile()
 
 // Dark theme toggle
-const toggleMode = document.getElementById("toggle-mode")
-toggleMode.addEventListener("click", () => {
-	document.documentElement.classList.toggle("dark")
-})
+/**
+ * Initializes a dark/light mode toggle by attaching a click listener
+ * to the provided toggle element. Also syncs the state with localStorage.
+ *
+ * @param {string} toggleButtonId - The ID of the button that toggles the theme
+ */
+function initThemeToggle(toggleButtonId = "toggle-mode") {
+	const toggleButton = document.getElementById(toggleButtonId)
+
+	// Ensure the toggle button exists
+	if (!toggleButton) {
+		console.error(
+			`initThemeToggle: Element with ID "${toggleButtonId}" not found.`,
+		)
+		return
+	}
+
+	// Apply saved theme on page load
+	const savedTheme = localStorage.getItem("theme")
+	if (savedTheme === "dark") {
+		document.documentElement.classList.add("dark")
+	} else if (savedTheme === "light") {
+		document.documentElement.classList.remove("dark")
+	}
+
+	// Toggle theme on click
+	toggleButton.addEventListener("click", () => {
+		const isDark = document.documentElement.classList.toggle("dark")
+
+		// Save the new theme preference
+		localStorage.setItem("theme", isDark ? "dark" : "light")
+	})
+}
+initThemeToggle()
 
 // Searchbar
 function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
@@ -79,41 +107,44 @@ function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
 	const clearBtn = document.getElementById(clearBtnId)
 	const container = document.getElementById(containerId)
 
-	if (!searchInput || !dropdown || !clearBtn) {
-		console.error("initSearchBar: один из элементов не найден")
+	// Check if all required elements exist
+	if (!searchInput || !dropdown || !clearBtn || !container) {
+		console.error("initSearchBar: One or more elements not found")
 		return
 	}
 
-	// Показывать dropdown при вводе
+	// Helper function to show/hide dropdown and styles
+	function toggleDropdown(show) {
+		dropdown.classList.toggle("hidden", !show)
+		clearBtn.classList.toggle("hidden", !show)
+		container.classList.toggle("active", show)
+	}
+
+	// Show dropdown when user types something
 	searchInput.addEventListener("input", () => {
-		if (searchInput.value.trim() !== "") {
-			dropdown.classList.remove("hidden")
-			clearBtn.classList.remove("hidden")
-			container.classList.add("active")
-		} else {
-			dropdown.classList.add("hidden")
-			clearBtn.classList.add("hidden")
-			container.classList.remove("active")
-		}
+		const hasValue = searchInput.value.trim() !== ""
+		toggleDropdown(hasValue)
 	})
 
-	// Очистка инпута
+	// Clear input and hide dropdown on clear button click
 	clearBtn.addEventListener("click", () => {
 		searchInput.value = ""
-		dropdown.classList.add("hidden")
-		clearBtn.classList.add("hidden")
-		container.classList.remove("active")
+		toggleDropdown(false)
 		searchInput.focus()
 	})
 
-	// Закрытие при клике вне
+	// Hide dropdown when clicking outside of input or dropdown
 	document.addEventListener("click", (e) => {
-		if (
-			!e.target.closest(`#${inputId}`) &&
-			!e.target.closest(`#${dropdownId}`)
-		) {
-			dropdown.classList.add("hidden")
-			container.classList.remove("active")
+		if (!e.target.closest(`#${containerId}`)) {
+			toggleDropdown(false)
+		}
+	})
+
+	// Optional: Hide dropdown when pressing Escape
+	searchInput.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") {
+			toggleDropdown(false)
+			searchInput.blur()
 		}
 	})
 }

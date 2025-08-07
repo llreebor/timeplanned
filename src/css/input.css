@@ -116,6 +116,9 @@
 	.notification {
 		@apply bg-secondary-50 absolute -top-1 -right-1 flex size-4 items-center justify-center rounded-full border border-white text-[8px] leading-none font-bold text-white;
 	}
+	.notification-bottom {
+		@apply bg-grey-30 absolute -right-1 -bottom-1 flex size-4 items-center justify-center rounded-full border border-white text-[8px] leading-none font-bold text-white;
+	}
 
 	/* Menu */
 	.menu-link {
@@ -164,6 +167,11 @@
 	/* Checkbox */
 	.checkbox-group-item {
 		@apply text-grey-20 border-grey-20 peer-checked:border-primary-40 peer-checked:bg-primary-40 peer-checked:hover:bg-primary-40 peer-disabled:text-grey-60 peer-disabled:border-grey-60 hover:bg-grey-95 dark:bg-primary-20 dark:border-grey-70 dark:hover:bg-primary-20/50 dark:peer-checked:bg-primary-90 dark:peer-checked:border-primary-90 dark:peer-checked:text-primary-20 dark:peer-checked:hover:bg-primary-90 dark:peer-disabled:text-grey-60 dark:peer-disabled:border-grey-30 flex w-full items-center justify-center rounded-lg border px-2 py-2 text-center text-xs transition-colors peer-checked:font-semibold peer-checked:text-white peer-disabled:cursor-not-allowed peer-disabled:bg-white peer-disabled:hover:bg-transparent min-[420px]:text-sm dark:text-white dark:peer-disabled:bg-transparent;
+	}
+
+	/* Event Details Info */
+	.event-details-info {
+		@apply border-l-secondary-50 [&.green-border]:border-tertiary-40 my-2 rounded border-l-4 px-2;
 	}
 }
 

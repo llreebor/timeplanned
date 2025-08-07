@@ -149,13 +149,16 @@
 
 	/* Button */
 	.btn {
-		@apply font-dm_sans inline-flex items-center rounded-full border border-transparent px-4 py-2 text-sm font-bold underline transition-all disabled:cursor-not-allowed disabled:opacity-85 [&_span]:px-2;
+		@apply font-dm_sans inline-flex items-center rounded-full border border-transparent px-4 py-2 text-sm font-bold underline transition-all disabled:cursor-not-allowed disabled:opacity-85 [&_path]:fill-current [&_span]:px-2;
 	}
 	.btn-primary {
 		@apply bg-primary-40 hover:shadow-btn dark:text-primary-20 dark:border-primary-90 border-primary-40 not-disabled:hover:bg-primary-40 not-disabled:active:bg-primary-50 dark:bg-primary-90 dark:not-disabled:hover:bg-primary-80 dark:not-disabled:hover:border-primary-80 text-white underline-offset-2;
 	}
 	.btn-secondary {
 		@apply hover:shadow-btn border-grey-30 not-disabled:hover:bg-grey-95 not-disabled:active:bg-grey-90 text-grey-20 bg-white underline-offset-2;
+	}
+	.btn-text {
+		@apply not-disabled:hover:text-primary-40 not-disabled:active:bg-grey-90 text-grey-20 dark:text-grey-70 border-none bg-white p-1 underline-offset-2 not-disabled:hover:bg-transparent dark:bg-transparent;
 	}
 
 	/* Checkbox */

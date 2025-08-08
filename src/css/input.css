@@ -160,7 +160,7 @@
 		@apply bg-primary-40 hover:shadow-btn dark:text-primary-20 dark:border-primary-90 border-primary-40 not-disabled:hover:bg-primary-40 not-disabled:active:bg-primary-50 dark:bg-primary-90 dark:not-disabled:hover:bg-primary-80 dark:not-disabled:hover:border-primary-80 text-white underline-offset-2;
 	}
 	.btn-secondary {
-		@apply hover:shadow-btn border-grey-30 not-disabled:hover:bg-grey-95 not-disabled:active:bg-grey-90 text-grey-20 bg-white underline-offset-2;
+		@apply hover:shadow-btn border-grey-30 not-disabled:hover:bg-grey-95 not-disabled:active:bg-grey-90 text-grey-20 dark:border-grey-70 dark:hover:bg-primary-20/50! bg-white underline-offset-2 dark:bg-transparent dark:text-white;
 	}
 	.btn-text {
 		@apply not-disabled:hover:text-primary-40 not-disabled:active:bg-grey-90 text-grey-20 dark:text-grey-70 border-none bg-white p-1 underline-offset-2 not-disabled:hover:bg-transparent dark:bg-transparent;
@@ -168,7 +168,7 @@
 
 	/* Checkbox */
 	.checkbox-group-item {
-		@apply text-grey-20 border-grey-20 peer-checked:border-primary-40 peer-checked:bg-primary-40 peer-checked:hover:bg-primary-40 peer-disabled:text-grey-60 peer-disabled:border-grey-60 hover:bg-grey-95 dark:bg-primary-20 dark:border-grey-70 dark:hover:bg-primary-20/50 dark:peer-checked:bg-primary-90 dark:peer-checked:border-primary-90 dark:peer-checked:text-primary-20 dark:peer-checked:hover:bg-primary-90 dark:peer-disabled:text-grey-60 dark:peer-disabled:border-grey-30 flex w-full items-center justify-center rounded-lg border px-2 py-2 text-center text-xs transition-colors peer-checked:font-semibold peer-checked:text-white peer-disabled:cursor-not-allowed peer-disabled:bg-white peer-disabled:hover:bg-transparent min-[420px]:text-sm dark:text-white dark:peer-disabled:bg-transparent;
+		@apply text-grey-20 border-grey-20 peer-checked:border-primary-40 peer-checked:bg-primary-40 peer-checked:hover:bg-primary-40 peer-disabled:text-grey-60 peer-disabled:border-grey-60 hover:bg-grey-95 dark:bg-primary-20 dark:border-grey-70 dark:hover:bg-primary-20/50 dark:peer-checked:bg-primary-90 dark:peer-checked:border-primary-90 dark:peer-checked:text-primary-20 dark:peer-checked:hover:bg-primary-90 dark:peer-disabled:text-grey-60 dark:peer-disabled:border-grey-30 flex min-h-[34px] w-full items-center justify-center rounded-lg border px-2 py-2 text-center text-xs transition-colors peer-checked:font-semibold peer-checked:text-white peer-disabled:cursor-not-allowed peer-disabled:bg-white peer-disabled:hover:bg-transparent min-[420px]:text-sm dark:text-white dark:peer-disabled:bg-transparent;
 	}
 
 	/* Event Details Info */
@@ -178,13 +178,13 @@
 
 	/* Input */
 	.input {
-		@apply border-grey-70 group-[.invalid]/label:border-error not-disabled:placeholder:text-grey-70 text-grey-20 not-disabled:hover:border-primary-40 not-disabled:focus:border-primary-40 focus:outline-primary-40 dark:not-disabled:focus:border-grey-90 flex w-full rounded-lg border p-4 transition-all group-[.valid]/label:border-green-600 disabled:cursor-not-allowed dark:text-white dark:outline-none dark:not-disabled:hover:border-white;
+		@apply border-grey-70 group-[.invalid]/label:border-error not-disabled:placeholder:text-grey-70 text-grey-20 not-disabled:hover:border-primary-40 not-disabled:focus:border-primary-40 focus:outline-primary-40 dark:not-disabled:focus:border-grey-90 flex w-full rounded-lg border p-4 transition-all group-[.valid]/label:border-green-600 disabled:cursor-not-allowed dark:text-white dark:outline-none dark:not-disabled:hover:border-white [.input-with-icon]:pl-[52px];
 	}
 	.input-error {
 		@apply text-error invisible flex items-center gap-1.5 text-sm opacity-0 transition-all group-[.invalid]/label:visible group-[.invalid]/label:opacity-100;
 	}
 	.label {
-		@apply flex cursor-pointer flex-col gap-2;
+		@apply relative flex cursor-pointer flex-col gap-2;
 	}
 	.label-text {
 		@apply text-grey-30 dark:text-grey-90 group-[.invalid]/label:text-error font-bold group-[.valid]/label:text-green-600;
@@ -192,7 +192,7 @@
 
 	/* Datapicker */
 	.datapicker {
-		@apply w-[343px];
+		@apply w-[300px] min-[374px]:w-[343px];
 	}
 	.datapicker-header {
 		@apply flex max-w-fit items-center justify-between gap-2;
@@ -210,11 +210,19 @@
 		@apply text-grey-40 dark:text-grey-80 text-xs font-semibold uppercase;
 	}
 	.datapicker-days-grid {
-		@apply grid grid-cols-7 gap-x-[2.5] gap-y-2 text-center;
+		@apply grid grid-cols-7 gap-y-2 text-center min-[374px]:gap-x-2.5;
 	}
 	/* .selected, .disabled,  */
 	.datapicker-day-num {
 		@apply text-grey-20 [.selected]:bg-primary-40 dark:[.selected]:text-primary-20 dark:[.selected]:bg-primary-90 dark:hover:bg-primary-90/10 hover:bg-primary-95 [.disabled]:text-grey-60 flex size-7 cursor-pointer items-center justify-center rounded-full text-sm font-semibold min-[374px]:size-10 dark:text-white [.disabled]:cursor-not-allowed [.disabled]:hover:bg-transparent [.selected]:text-white;
+	}
+
+	/* Tabs */
+	.tabs-header {
+		@apply border-b-grey-70 dark:border-b-grey-50 grid grid-cols-3 border-b;
+	}
+	.tab-trigger {
+		@apply animate-fadeIn text-grey-20 [.active]:border-b-primary-40 -mb-px border-b-2 border-b-transparent pt-4 pb-1 text-[11px] uppercase transition-colors min-[374px]:px-2 min-[374px]:text-xs md:text-sm lg:pt-3 dark:text-white [.active]:font-semibold dark:[.active]:border-b-[#A68CD9];
 	}
 }
 

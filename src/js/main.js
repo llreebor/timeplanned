@@ -65,12 +65,6 @@ function initializeMobile() {
 initializeMobile()
 
 // Dark theme toggle
-/**
- * Initializes a dark/light mode toggle by attaching a click listener
- * to the provided toggle element. Also syncs the state with localStorage.
- *
- * @param {string} toggleButtonId - The ID of the button that toggles the theme
- */
 function initThemeToggle(toggleButtonId = "toggle-mode") {
 	const toggleButton = document.getElementById(toggleButtonId)
 
@@ -150,6 +144,7 @@ function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
 }
 initSearchBar("search-input-container", "searchInput", "dropdown", "clearBtn")
 
+// Datapicker
 function initCalendar({
 	containerId,
 	monthDisplayId,
@@ -281,12 +276,78 @@ function initCalendar({
 	// Initial render of the calendar
 	renderCalendar(currentYear, currentMonth)
 }
-
-// Example init
 initCalendar({
 	containerId: "calendarDays",
 	monthDisplayId: "currentMonth",
 	prevBtnId: "prevMonth",
 	nextBtnId: "nextMonth",
-	disabledDates: ["2025-08-16", "2025-08-22"], // можно писать даже "2025-8-16"
+	disabledDates: ["2025-08-16", "2025-08-22"],
 })
+
+// Initializes tab navigation with accessibility features for a given tab container.
+function toggleTabs(tabsId) {
+	// Get the main tab container element
+	const tabs = document.getElementById(tabsId)
+	if (!tabs) return // Exit if the tab container is not found
+
+	// Select all tab triggers and content panels
+	const tabsTriggers = tabs.querySelectorAll(".tab-trigger")
+	const tabsContents = tabs.querySelectorAll(".tab-content")
+
+	// Sets the active tab and updates ARIA attributes and visual states.
+	function setActiveTab(index) {
+		// Update each tab trigger's state
+		tabsTriggers.forEach((trigger, i) => {
+			const isActive = i === index
+			// Set ARIA attribute to indicate the selected tab
+			trigger.setAttribute("aria-selected", isActive)
+			// Set tabindex for keyboard accessibility
+			trigger.setAttribute("tabindex", isActive ? "0" : "-1")
+			// Toggle active class for visual styling
+			trigger.classList.toggle("active", isActive)
+		})
+
+		// Update each content panel's visibility
+		tabsContents.forEach((content, i) => {
+			const isActive = i === index
+			// Toggle hidden class to show only the active content
+			content.classList.toggle("hidden", !isActive)
+			// Set ARIA attribute to indicate visibility for screen readers
+			content.setAttribute("aria-hidden", !isActive)
+		})
+	}
+
+	// Add event listeners to each tab trigger
+	tabsTriggers.forEach((trigger, index) => {
+		// Handle click events to activate the tab
+		trigger.addEventListener("click", () => {
+			setActiveTab(index)
+		})
+
+		// Handle keyboard navigation
+		trigger.addEventListener("keydown", (e) => {
+			if (e.key === "Enter" || e.key === " ") {
+				// Activate tab on Enter or Space key press
+				e.preventDefault()
+				setActiveTab(index)
+			} else if (e.key === "ArrowRight") {
+				// Navigate to the next tab with Arrow Right
+				e.preventDefault()
+				const nextIndex = (index + 1) % tabsTriggers.length
+				setActiveTab(nextIndex)
+				tabsTriggers[nextIndex].focus()
+			} else if (e.key === "ArrowLeft") {
+				// Navigate to the previous tab with Arrow Left
+				e.preventDefault()
+				const prevIndex =
+					(index - 1 + tabsTriggers.length) % tabsTriggers.length
+				setActiveTab(prevIndex)
+				tabsTriggers[prevIndex].focus()
+			}
+		})
+	})
+
+	// Initialize the first tab as active
+	setActiveTab(0)
+}
+toggleTabs("tabs")

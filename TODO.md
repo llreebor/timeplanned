@@ -1,0 +1,2 @@
+- добавить описание к инпутам
+- разобраться с Add Participants (optional) input

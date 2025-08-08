@@ -606,7 +606,7 @@
 							</div>
 						</div>
 						<!-- Right Side -->
-						<div class="w-full p-4 lg:px-10">
+						<div class="w-full py-4 lg:px-10">
 							<div class="lg:max-w-[694px]">
 								<!-- [START] HTML Breadcrumbs -->
 								<nav role="navigation">
@@ -689,13 +689,13 @@
 											</label>
 										</div>
 
+										<!-- Event Date -->
 										<div class="space-y-6 lg:space-y-5">
 											<p class="font-bold">Event Date</p>
 											<div class="datapicker select-none">
 												<div class="datapicker-header">
 													<button id="prevMonth" class="datapicker-month-btn">
 														<svg
-															class="rotate-180"
 															width="24"
 															height="24"
 															viewBox="0 0 24 24"
@@ -703,7 +703,8 @@
 															xmlns="http://www.w3.org/2000/svg"
 														>
 															<path
-																d="M16.7487 12.66L8.74867 21.66C8.38391 22.0737 7.75307 22.114 7.33867 21.75C6.92497 21.3852 6.8847 20.7544 7.24867 20.34L14.6587 12L7.24867 3.66C6.91287 3.24308 6.96496 2.63566 7.36684 2.28201C7.76872 1.92835 8.37783 1.95391 8.74867 2.34L16.7487 11.34C17.0803 11.7175 17.0803 12.2825 16.7487 12.66Z"
+																d="M16.7487 20.34C17.1127 20.7544 17.0724 21.3852 16.6587 21.75C16.2443 22.114 15.6135 22.0737 15.2487 21.66L7.24873 12.66C6.91709 12.2825 6.91709 11.7175 7.24873 11.34L15.2487 2.34C15.4794 2.05366 15.8485 1.91698 16.21 1.98407C16.5715 2.05117 16.867 2.31123 16.9796 2.66126C17.0921 3.01129 17.0034 3.39484 16.7487 3.66L9.33873 12L16.7487 20.34Z"
+																fill="#999999"
 															/>
 														</svg>
 													</button>
@@ -738,6 +739,799 @@
 													class="datapicker-days-grid"
 												></div>
 											</div>
+										</div>
+
+										<!-- Start Time -->
+										<div class="space-y-2">
+											<p class="font-bold">Start Time</p>
+
+											<div id="tabs" class="tabs">
+												<div class="tabs-header" role="tablist">
+													<button
+														class="tab-trigger active group"
+														role="tab"
+														aria-selected="true"
+														aria-controls="panel-0"
+														id="tab-0"
+														tabindex="0"
+													>
+														Morning Slots
+													</button>
+													<button
+														class="tab-trigger group"
+														role="tab"
+														aria-selected="false"
+														aria-controls="panel-1"
+														id="tab-1"
+														tabindex="-1"
+													>
+														Midday Slots
+													</button>
+													<button
+														class="tab-trigger group"
+														role="tab"
+														aria-selected="false"
+														aria-controls="panel-2"
+														id="tab-2"
+														tabindex="-1"
+													>
+														Evening Slots
+													</button>
+												</div>
+
+												<div class="tabs-content mt-5">
+													<div
+														id="panel-0"
+														class="tab-content animate-fadeIn"
+														role="tabpanel"
+														aria-labelledby="tab-0"
+													>
+														<div class="grid max-w-[476px] grid-cols-4 gap-4">
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">10:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">9:00am</span>
+															</label>
+														</div>
+													</div>
+													<div
+														id="panel-1"
+														class="tab-content animate-fadeIn hidden"
+														role="tabpanel"
+														aria-labelledby="tab-1"
+														aria-hidden="true"
+													>
+														<div class="grid max-w-[476px] grid-cols-4 gap-4">
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">2:00pm</span>
+															</label>
+														</div>
+													</div>
+													<div
+														id="panel-2"
+														class="tab-content animate-fadeIn hidden"
+														role="tabpanel"
+														aria-labelledby="tab-2"
+														aria-hidden="true"
+													>
+														<div class="grid max-w-[476px] grid-cols-4 gap-4">
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																	disabled
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+															<label class="flex cursor-pointer">
+																<input
+																	type="radio"
+																	name="available_time"
+																	value="1"
+																	class="peer hidden"
+																/>
+
+																<span class="checkbox-group-item">6:00pm</span>
+															</label>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<button class="btn btn-secondary mt-4">
+												<span>Enter Your Start Time</span>
+											</button>
+										</div>
+
+										<!-- Duration -->
+										<div class="space-y-2">
+											<p class="font-bold">Duration</p>
+
+											<div class="grid max-w-[476px] grid-cols-4 gap-4">
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+														disabled
+													/>
+
+													<span class="checkbox-group-item py-0">15 mins</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+														disabled
+													/>
+
+													<span class="checkbox-group-item py-0">30 mins</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">45 mins</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">1 hr</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">
+														1 hr 30 mins
+													</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+														disabled
+													/>
+
+													<span class="checkbox-group-item py-0">2 hrs</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">
+														2 hr 30 mins
+													</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="duration"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">3 hrs</span>
+												</label>
+											</div>
+											<button class="btn btn-secondary mt-4">
+												<span>Enter Your Duration</span>
+											</button>
+										</div>
+
+										<!-- Event Frequency -->
+										<div class="space-y-2">
+											<p class="font-bold">Event Frequency</p>
+
+											<div class="flex max-w-[476px] flex-wrap gap-4">
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="frequency"
+														value="1"
+														class="peer hidden"
+														disabled
+													/>
+
+													<span class="checkbox-group-item py-0">
+														Does not Repeat
+													</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="frequency"
+														value="1"
+														class="peer hidden"
+														disabled
+													/>
+
+													<span class="checkbox-group-item py-0">Daily</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="frequency"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">
+														Every weekday
+													</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="frequency"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">Weekly</span>
+												</label>
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="frequency"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">Monthly</span>
+												</label>
+
+												<label class="flex cursor-pointer">
+													<input
+														type="radio"
+														name="frequency"
+														value="1"
+														class="peer hidden"
+													/>
+
+													<span class="checkbox-group-item py-0">
+														Every three days, until August 23, 2025
+													</span>
+												</label>
+											</div>
+
+											<button class="btn btn-secondary mt-4">
+												<span>Custom Event Frequency</span>
+											</button>
+										</div>
+
+										<!-- Divider -->
+										<hr class="border-grey-70" />
+
+										<!-- Participants  -->
+										<div class="space-y-6 lg:space-y-5">
+											<div class="space-y-2">
+												<h3>Participants (0 Guest)</h3>
+												<p class="text-grey-40 dark:text-grey-80">
+													You haven’t added anyone yet
+												</p>
+											</div>
+
+											<!-- .invalid / .valid -->
+											<label
+												for="add_participants"
+												class="label label-with-icon group/label"
+											>
+												<p class="label-text">Add Participants (optional)</p>
+												<img
+													class="absolute top-1/2 left-4 mt-0.5 -translate-y-1/2"
+													src="./images/icons/search-icon.svg"
+													alt="search icon"
+												/>
+												<input
+													type="text"
+													class="input input-with-icon peer"
+													name="add_participants"
+													id="add_participants"
+													placeholder="Enter name or email here..."
+												/>
+
+												<p class="input-error">
+													<svg
+														width="16"
+														height="16"
+														viewBox="0 0 16 16"
+														fill="none"
+														xmlns="http://www.w3.org/2000/svg"
+													>
+														<path
+															d="M8 0C12.4183 0 16 3.58172 16 8C16 10.1217 15.1575 12.1569 13.6572 13.6572C12.1569 15.1575 10.1217 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8.19043 11.0195C7.86419 10.9542 7.52644 11.0559 7.29004 11.29C7.10286 11.4788 6.99846 11.7342 7 12C6.99846 12.2658 7.10286 12.5212 7.29004 12.71C7.38724 12.7983 7.49893 12.8693 7.62012 12.9199C7.86212 13.0269 8.13788 13.0269 8.37988 12.9199C8.50106 12.8693 8.61276 12.7983 8.70996 12.71C8.89715 12.5212 9.00154 12.2658 9 12C8.99632 11.7352 8.89269 11.4817 8.70996 11.29C8.66244 11.247 8.61195 11.2068 8.55957 11.1699C8.50392 11.1322 8.44348 11.1019 8.37988 11.0801C8.32046 11.0497 8.25652 11.0288 8.19043 11.0195ZM8 3C7.44772 3 7 3.33579 7 3.75V8.25C7 8.66421 7.44772 9 8 9C8.55229 9 9 8.66421 9 8.25V3.75C9 3.33579 8.55229 3 8 3Z"
+															fill="#DF064F"
+														/>
+													</svg>
+													Error Message
+												</p>
+											</label>
 										</div>
 									</div>
 								</div>

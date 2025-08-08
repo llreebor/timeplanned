@@ -213,13 +213,21 @@ function initCalendar({
 			dayCell.textContent = day
 			dayCell.className = "datapicker-day-num"
 
-			// Highlight only selected date
+			const cellDate = new Date(year, month, day)
+			cellDate.setHours(0, 0, 0, 0) // убрать время для точного сравнения
+			const todayCopy = new Date(today)
+			todayCopy.setHours(0, 0, 0, 0)
+
+			const isBeforeToday = cellDate < todayCopy
+			const isDisabledByData = disabledDates.includes(dateStr)
+
+			// Выделение выбранной даты
 			if (selectedDate === dateStr) {
 				dayCell.classList.add("selected")
 			}
 
-			// disabled highlight
-			if (disabledDates.includes(dateStr)) {
+			// Если дата ранее сегодняшней или в списке disabled — делаем её disabled
+			if (isBeforeToday || isDisabledByData) {
 				dayCell.classList.add("disabled")
 			} else {
 				dayCell.addEventListener("click", () => {

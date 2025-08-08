@@ -59,6 +59,8 @@
 	--color-grey-90: #e5e5e5;
 	--color-grey-95: #f2f2f2;
 
+	--color-error: #df064f;
+
 	/* Gradients */
 	--gradient-profile:
 		0deg, #367d7d 0%, #367d7d 100%, 0deg, #bf4095 0%, #bf4095 100%, 0deg,
@@ -172,6 +174,44 @@
 	/* Event Details Info */
 	.event-details-info {
 		@apply border-l-secondary-50 [&.green-border]:border-tertiary-40 my-2 rounded border-l-4 px-2;
+	}
+
+	/* Input */
+	.input {
+		@apply border-grey-70 group-[.invalid]/label:border-error not-disabled:placeholder:text-grey-70 text-grey-20 not-disabled:hover:border-primary-40 not-disabled:focus:border-primary-40 focus:outline-primary-40 dark:not-disabled:focus:border-grey-90 flex w-full rounded-lg border p-4 transition-all group-[.valid]/label:border-green-600 disabled:cursor-not-allowed dark:text-white dark:outline-none dark:not-disabled:hover:border-white;
+	}
+	.input-error {
+		@apply text-error invisible flex items-center gap-1.5 text-sm opacity-0 transition-all group-[.invalid]/label:visible group-[.invalid]/label:opacity-100;
+	}
+	.label {
+		@apply flex cursor-pointer flex-col gap-2;
+	}
+	.label-text {
+		@apply text-grey-30 dark:text-grey-90 group-[.invalid]/label:text-error font-bold group-[.valid]/label:text-green-600;
+	}
+
+	/* Datapicker */
+	.datapicker {
+		@apply w-[343px];
+	}
+	.datapicker-header {
+		@apply flex max-w-fit items-center justify-between gap-2;
+	}
+	.datapicker-month-btn {
+		@apply disabled:[&_path]:fill-grey-60 flex size-8 cursor-pointer items-center justify-center p-1 [&_path]:fill-[#231F20] dark:[&_path]:fill-white;
+	}
+	.datapicker-month {
+		@apply shrink-0 font-bold;
+	}
+	.datapicker-calendar {
+		@apply mb-2 grid grid-cols-7 py-4 text-center text-sm text-gray-500;
+	}
+	.datapicker-day-name {
+		@apply text-grey-40 dark:text-grey-80 text-xs font-semibold uppercase;
+	}
+	/* .selected, .disabled,  */
+	.datapicker-day-num {
+		@apply text-grey-20 [.selected]:bg-primary-40 dark:[.selected]:text-primary-20 dark:[.selected]:bg-primary-90 dark:hover:bg-primary-90/10 hover:bg-primary-95 [.disabled]:text-grey-60 flex size-7 cursor-pointer items-center justify-center rounded-full text-sm font-semibold min-[374px]:size-10 dark:text-white [.disabled]:cursor-not-allowed [.disabled]:hover:bg-transparent [.selected]:text-white;
 	}
 }
 

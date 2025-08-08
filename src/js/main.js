@@ -149,3 +149,117 @@ function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
 	})
 }
 initSearchBar("search-input-container", "searchInput", "dropdown", "clearBtn")
+
+function initCalendar({
+	containerId,
+	monthDisplayId,
+	prevBtnId,
+	nextBtnId,
+	disabledDates,
+}) {
+	// Normalize disabledDates to YYYY-MM-DD
+	disabledDates = disabledDates.map((date) => {
+		const d = new Date(date)
+		return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
+	})
+
+	const calendarDays = document.getElementById(containerId)
+	const currentMonthEl = document.getElementById(monthDisplayId)
+	const prevMonthBtn = document.getElementById(prevBtnId)
+	const nextMonthBtn = document.getElementById(nextBtnId)
+
+	const today = new Date()
+	let currentYear = today.getFullYear()
+	let currentMonth = today.getMonth()
+	let selectedDate = formatDate(currentYear, currentMonth, today.getDate())
+
+	function formatDate(year, month, day) {
+		return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`
+	}
+
+	function renderCalendar(year, month) {
+		currentMonthEl.textContent = new Date(year, month).toLocaleDateString(
+			"en-US",
+			{
+				month: "long",
+				year: "numeric",
+			},
+		)
+
+		if (
+			year < today.getFullYear() ||
+			(year === today.getFullYear() && month <= today.getMonth())
+		) {
+			prevMonthBtn.disabled = true
+		} else {
+			prevMonthBtn.disabled = false
+		}
+
+		calendarDays.innerHTML = ""
+
+		const firstDay = new Date(year, month, 1).getDay()
+		const daysInMonth = new Date(year, month + 1, 0).getDate()
+		const shift = firstDay === 0 ? 6 : firstDay - 1
+
+		for (let i = 0; i < shift; i++) {
+			const emptyCell = document.createElement("button")
+			emptyCell.classList.add("text-transparent")
+			calendarDays.appendChild(emptyCell)
+		}
+
+		for (let day = 1; day <= daysInMonth; day++) {
+			const dateStr = formatDate(year, month, day)
+			const dayCell = document.createElement("div")
+			dayCell.textContent = day
+			dayCell.className = "datapicker-day-num"
+
+			// Highlight only selected date
+			if (selectedDate === dateStr) {
+				dayCell.classList.add("selected")
+			}
+
+			// disabled highlight
+			if (disabledDates.includes(dateStr)) {
+				dayCell.classList.add("disabled")
+			} else {
+				dayCell.addEventListener("click", () => {
+					selectedDate = dateStr
+					renderCalendar(currentYear, currentMonth)
+				})
+			}
+
+			calendarDays.appendChild(dayCell)
+		}
+	}
+
+	prevMonthBtn.addEventListener("click", () => {
+		if (currentMonth === 0) {
+			currentMonth = 11
+			currentYear--
+		} else {
+			currentMonth--
+		}
+		renderCalendar(currentYear, currentMonth)
+	})
+
+	nextMonthBtn.addEventListener("click", () => {
+		if (currentMonth === 11) {
+			currentMonth = 0
+			currentYear++
+		} else {
+			currentMonth++
+		}
+		renderCalendar(currentYear, currentMonth)
+	})
+
+	renderCalendar(currentYear, currentMonth)
+}
+
+// Example init
+initCalendar({
+	containerId: "calendarDays",
+	monthDisplayId: "currentMonth",
+	prevBtnId: "prevMonth",
+	nextBtnId: "nextMonth",
+	disabledDates: ["2025-08-16", "2025-08-22"], // можно писать даже "2025-8-16"
+})

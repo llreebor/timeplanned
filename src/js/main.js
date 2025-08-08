@@ -157,27 +157,32 @@ function initCalendar({
 	nextBtnId,
 	disabledDates,
 }) {
-	// Normalize disabledDates to YYYY-MM-DD
+	// Normalize disabledDates to 'YYYY-MM-DD' format for easier comparison
 	disabledDates = disabledDates.map((date) => {
 		const d = new Date(date)
 		return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 	})
 
+	// Get DOM elements
 	const calendarDays = document.getElementById(containerId)
 	const currentMonthEl = document.getElementById(monthDisplayId)
 	const prevMonthBtn = document.getElementById(prevBtnId)
 	const nextMonthBtn = document.getElementById(nextBtnId)
 
+	// Get today’s date
 	const today = new Date()
 	let currentYear = today.getFullYear()
 	let currentMonth = today.getMonth()
 	let selectedDate = formatDate(currentYear, currentMonth, today.getDate())
 
+	// Helper function to format a date as 'YYYY-MM-DD'
 	function formatDate(year, month, day) {
 		return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`
 	}
 
+	// Render calendar for a given month and year
 	function renderCalendar(year, month) {
+		// Display current month and year in header
 		currentMonthEl.textContent = new Date(year, month).toLocaleDateString(
 			"en-US",
 			{
@@ -186,6 +191,7 @@ function initCalendar({
 			},
 		)
 
+		// Disable prev button if we are in the current or past month
 		if (
 			year < today.getFullYear() ||
 			(year === today.getFullYear() && month <= today.getMonth())
@@ -195,44 +201,54 @@ function initCalendar({
 			prevMonthBtn.disabled = false
 		}
 
+		// Clear previous calendar days
 		calendarDays.innerHTML = ""
 
+		// Determine the weekday of the 1st day of the month
 		const firstDay = new Date(year, month, 1).getDay()
+
+		// Get number of days in the month
 		const daysInMonth = new Date(year, month + 1, 0).getDate()
+
+		// Calculate number of leading empty cells to align the first day
 		const shift = firstDay === 0 ? 6 : firstDay - 1
 
+		// Add empty cells at the beginning for alignment
 		for (let i = 0; i < shift; i++) {
 			const emptyCell = document.createElement("button")
 			emptyCell.classList.add("text-transparent")
 			calendarDays.appendChild(emptyCell)
 		}
 
+		// Generate day cells
 		for (let day = 1; day <= daysInMonth; day++) {
 			const dateStr = formatDate(year, month, day)
 			const dayCell = document.createElement("div")
 			dayCell.textContent = day
 			dayCell.className = "datapicker-day-num"
 
+			// Normalize cellDate and todayCopy to ignore time for comparison
 			const cellDate = new Date(year, month, day)
-			cellDate.setHours(0, 0, 0, 0) // убрать время для точного сравнения
+			cellDate.setHours(0, 0, 0, 0)
 			const todayCopy = new Date(today)
 			todayCopy.setHours(0, 0, 0, 0)
 
 			const isBeforeToday = cellDate < todayCopy
 			const isDisabledByData = disabledDates.includes(dateStr)
 
-			// Выделение выбранной даты
+			// Highlight the selected date
 			if (selectedDate === dateStr) {
 				dayCell.classList.add("selected")
 			}
 
-			// Если дата ранее сегодняшней или в списке disabled — делаем её disabled
+			// Disable dates before today or listed in disabledDates
 			if (isBeforeToday || isDisabledByData) {
 				dayCell.classList.add("disabled")
 			} else {
+				// Allow selecting available date
 				dayCell.addEventListener("click", () => {
 					selectedDate = dateStr
-					renderCalendar(currentYear, currentMonth)
+					renderCalendar(currentYear, currentMonth) // Re-render to update selection
 				})
 			}
 
@@ -240,6 +256,7 @@ function initCalendar({
 		}
 	}
 
+	// Handle "Previous Month" button click
 	prevMonthBtn.addEventListener("click", () => {
 		if (currentMonth === 0) {
 			currentMonth = 11
@@ -250,6 +267,7 @@ function initCalendar({
 		renderCalendar(currentYear, currentMonth)
 	})
 
+	// Handle "Next Month" button click
 	nextMonthBtn.addEventListener("click", () => {
 		if (currentMonth === 11) {
 			currentMonth = 0
@@ -260,6 +278,7 @@ function initCalendar({
 		renderCalendar(currentYear, currentMonth)
 	})
 
+	// Initial render of the calendar
 	renderCalendar(currentYear, currentMonth)
 }
 

@@ -209,6 +209,9 @@
 	.datapicker-day-name {
 		@apply text-grey-40 dark:text-grey-80 text-xs font-semibold uppercase;
 	}
+	.datapicker-days-grid {
+		@apply grid grid-cols-7 gap-x-[2.5] gap-y-2 text-center;
+	}
 	/* .selected, .disabled,  */
 	.datapicker-day-num {
 		@apply text-grey-20 [.selected]:bg-primary-40 dark:[.selected]:text-primary-20 dark:[.selected]:bg-primary-90 dark:hover:bg-primary-90/10 hover:bg-primary-95 [.disabled]:text-grey-60 flex size-7 cursor-pointer items-center justify-center rounded-full text-sm font-semibold min-[374px]:size-10 dark:text-white [.disabled]:cursor-not-allowed [.disabled]:hover:bg-transparent [.selected]:text-white;

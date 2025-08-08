@@ -181,7 +181,7 @@
 		@apply border-grey-70 group-[.invalid]/label:border-error not-disabled:placeholder:text-grey-70 text-grey-20 not-disabled:hover:border-primary-40 not-disabled:focus:border-primary-40 focus:outline-primary-40 dark:not-disabled:focus:border-grey-90 flex w-full rounded-lg border p-4 transition-all group-[.valid]/label:border-green-600 disabled:cursor-not-allowed dark:text-white dark:outline-none dark:not-disabled:hover:border-white [.input-with-icon]:pl-[52px];
 	}
 	.input-error {
-		@apply text-error invisible flex items-center gap-1.5 text-sm opacity-0 transition-all group-[.invalid]/label:visible group-[.invalid]/label:opacity-100;
+		@apply text-error invisible hidden items-center gap-1.5 text-sm opacity-0 transition-all group-[.invalid]/label:visible group-[.invalid]/label:flex group-[.invalid]/label:opacity-100;
 	}
 	.label {
 		@apply relative flex cursor-pointer flex-col gap-2;

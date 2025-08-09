@@ -95,7 +95,13 @@ function initThemeToggle(toggleButtonId = "toggle-mode") {
 initThemeToggle()
 
 // Searchbar
-function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
+function initSearchBar(
+	containerId,
+	inputId,
+	dropdownId,
+	clearBtnId,
+	closeOnItemClick = true,
+) {
 	const searchInput = document.getElementById(inputId)
 	const dropdown = document.getElementById(dropdownId)
 	const clearBtn = document.getElementById(clearBtnId)
@@ -129,6 +135,10 @@ function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
 
 	// Hide dropdown when clicking outside of input or dropdown
 	document.addEventListener("click", (e) => {
+		if (e.target.closest(`#${dropdownId}`)) {
+			if (closeOnItemClick) toggleDropdown(false)
+			return
+		}
 		if (!e.target.closest(`#${containerId}`)) {
 			toggleDropdown(false)
 		}
@@ -143,6 +153,13 @@ function initSearchBar(containerId, inputId, dropdownId, clearBtnId) {
 	})
 }
 initSearchBar("search-input-container", "searchInput", "dropdown", "clearBtn")
+initSearchBar(
+	"add-participants-input-container",
+	"add-participants-input",
+	"add-participants-dropdown",
+	"add-participants-clearBtn",
+	false,
+)
 
 // Datapicker
 function initCalendar({

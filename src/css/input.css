@@ -134,11 +134,20 @@
 	.search-input-container {
 		@apply [.active]:border-primary-40 focus-within:border-primary-40 border-grey-70 flex w-full items-center rounded-full border px-4 py-3 transition dark:focus-within:border-[#A68CD9] [.active]:rounded-t-3xl [.active]:rounded-b-none [.active]:border-2 [.active]:border-b-transparent dark:[.active]:border-[#A68CD9];
 	}
+	.add-participants-input-container {
+		@apply rounded-lg py-4 [.active]:rounded-lg;
+	}
+	.add-participants-input {
+		@apply not-disabled:placeholder:text-grey-70;
+	}
+	.add-participants-dropdown {
+		@apply rounded-b-lg!;
+	}
 	.search-input {
 		@apply placeholder:text-grey-40 text-grey-20 flex w-full pl-4 outline-none dark:text-white;
 	}
 	.search-dropdown {
-		@apply border-primary-40 dark:bg-primary-10 absolute top-full right-0 left-0 z-0 -mt-[2px] w-full overflow-hidden rounded-b-3xl border-2 border-t-0 bg-white pb-2 dark:border-[#A68CD9];
+		@apply border-primary-40 dark:bg-primary-10 absolute top-full right-0 left-0 z-10 -mt-[2px] w-full overflow-hidden rounded-b-3xl border-2 border-t-0 bg-white pb-2 dark:border-[#A68CD9];
 	}
 	.search-result-item {
 		@apply cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#3E334D];

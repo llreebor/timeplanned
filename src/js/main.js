@@ -181,6 +181,8 @@ function initCalendar({
 	const prevMonthBtn = document.getElementById(prevBtnId)
 	const nextMonthBtn = document.getElementById(nextBtnId)
 
+	if (!calendarDays) return
+
 	// Get today’s date
 	const today = new Date()
 	let currentYear = today.getFullYear()
@@ -367,4 +369,5 @@ function toggleTabs(tabsId) {
 	// Initialize the first tab as active
 	setActiveTab(0)
 }
-toggleTabs("tabs")
+toggleTabs("start-time-tabs")
+toggleTabs("schedule-tabs")

@@ -631,7 +631,7 @@
 										</li>
 										<li class="breadcrumbs-item">
 											<a class="breadcrumbs-link" href="#" aria-current="page">
-												Create Event
+												Event List
 											</a>
 											<svg
 												class="block"
@@ -653,100 +653,35 @@
 
 								<!-- Content -->
 								<div class="space-y-4 py-6 lg:space-y-6">
-									<h1>Create Event</h1>
+									<div
+										class="flex flex-wrap items-center justify-between gap-2"
+									>
+										<h1>Schedule</h1>
+										<button class="btn btn-secondary">
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M17 2C17.5523 2 18 2.44772 18 3V5H19C20.6569 5 22 6.34315 22 8V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H6V3C6 2.44772 6.44772 2 7 2C7.55228 2 8 2.44772 8 3V5H16V3C16 2.44772 16.4477 2 17 2ZM4 11V19C4 19.5523 4.44772 20 5 20H19C19.5523 20 20 19.5523 20 19V11H4ZM5 7C4.44772 7 4 7.44772 4 8V9H20V8C20 7.44772 19.5523 7 19 7H5Z"
+													fill="#4D4D4D"
+												/>
+											</svg>
+
+											<span>View Calendar</span>
+										</button>
+									</div>
 
 									<div class="space-y-6 lg:space-y-4">
-										<!-- Schedule Details  -->
-										<div class="space-y-6 lg:space-y-5">
-											<h3>Schedule Details</h3>
-
-											<!-- .invalid / .valid -->
-											<label for="event_name" class="label group/label">
-												<p class="label-text">Email:</p>
-												<input
-													type="text"
-													class="input peer"
-													name="event_name"
-													id="event_name"
-													placeholder="Placeholder"
-												/>
-
-												<p class="input-error">
-													<svg
-														width="16"
-														height="16"
-														viewBox="0 0 16 16"
-														fill="none"
-														xmlns="http://www.w3.org/2000/svg"
-													>
-														<path
-															d="M8 0C12.4183 0 16 3.58172 16 8C16 10.1217 15.1575 12.1569 13.6572 13.6572C12.1569 15.1575 10.1217 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8.19043 11.0195C7.86419 10.9542 7.52644 11.0559 7.29004 11.29C7.10286 11.4788 6.99846 11.7342 7 12C6.99846 12.2658 7.10286 12.5212 7.29004 12.71C7.38724 12.7983 7.49893 12.8693 7.62012 12.9199C7.86212 13.0269 8.13788 13.0269 8.37988 12.9199C8.50106 12.8693 8.61276 12.7983 8.70996 12.71C8.89715 12.5212 9.00154 12.2658 9 12C8.99632 11.7352 8.89269 11.4817 8.70996 11.29C8.66244 11.247 8.61195 11.2068 8.55957 11.1699C8.50392 11.1322 8.44348 11.1019 8.37988 11.0801C8.32046 11.0497 8.25652 11.0288 8.19043 11.0195ZM8 3C7.44772 3 7 3.33579 7 3.75V8.25C7 8.66421 7.44772 9 8 9C8.55229 9 9 8.66421 9 8.25V3.75C9 3.33579 8.55229 3 8 3Z"
-															fill="#DF064F"
-														/>
-													</svg>
-													Error Message
-												</p>
-											</label>
-										</div>
-
-										<!-- Event Date -->
-										<div class="space-y-6 lg:space-y-5">
-											<p class="font-bold">Event Date</p>
-											<div class="datapicker select-none">
-												<div class="datapicker-header">
-													<button id="prevMonth" class="datapicker-month-btn">
-														<svg
-															width="24"
-															height="24"
-															viewBox="0 0 24 24"
-															fill="none"
-															xmlns="http://www.w3.org/2000/svg"
-														>
-															<path
-																d="M16.7487 20.34C17.1127 20.7544 17.0724 21.3852 16.6587 21.75C16.2443 22.114 15.6135 22.0737 15.2487 21.66L7.24873 12.66C6.91709 12.2825 6.91709 11.7175 7.24873 11.34L15.2487 2.34C15.4794 2.05366 15.8485 1.91698 16.21 1.98407C16.5715 2.05117 16.867 2.31123 16.9796 2.66126C17.0921 3.01129 17.0034 3.39484 16.7487 3.66L9.33873 12L16.7487 20.34Z"
-																fill="#999999"
-															/>
-														</svg>
-													</button>
-													<p id="currentMonth" class="datapicker-month"></p>
-													<button id="nextMonth" class="datapicker-month-btn">
-														<svg
-															width="24"
-															height="24"
-															viewBox="0 0 24 24"
-															fill="none"
-															xmlns="http://www.w3.org/2000/svg"
-														>
-															<path
-																d="M16.7487 12.66L8.74867 21.66C8.38391 22.0737 7.75307 22.114 7.33867 21.75C6.92497 21.3852 6.8847 20.7544 7.24867 20.34L14.6587 12L7.24867 3.66C6.91287 3.24308 6.96496 2.63566 7.36684 2.28201C7.76872 1.92835 8.37783 1.95391 8.74867 2.34L16.7487 11.34C17.0803 11.7175 17.0803 12.2825 16.7487 12.66Z"
-															/>
-														</svg>
-													</button>
-												</div>
-
-												<div class="datapicker-calendar">
-													<div class="datapicker-day-name">Mon</div>
-													<div class="datapicker-day-name">Tue</div>
-													<div class="datapicker-day-name">Wed</div>
-													<div class="datapicker-day-name">Thu</div>
-													<div class="datapicker-day-name">Fri</div>
-													<div class="datapicker-day-name">Sat</div>
-													<div class="datapicker-day-name">Sun</div>
-												</div>
-
-												<div
-													id="calendarDays"
-													class="datapicker-days-grid"
-												></div>
-											</div>
-										</div>
-
 										<!-- Start Time -->
 										<div class="space-y-2">
 											<p class="font-bold">Start Time</p>
 
-											<div id="start-time-tabs" class="tabs">
-												<div class="tabs-header" role="tablist">
+											<div id="schedule-tabs" class="tabs">
+												<div class="tabs-header grid-cols-2" role="tablist">
 													<button
 														class="tab-trigger active group"
 														role="tab"
@@ -755,7 +690,7 @@
 														id="tab-0"
 														tabindex="0"
 													>
-														Morning Slots
+														Upcoming Events
 													</button>
 													<button
 														class="tab-trigger group"
@@ -765,17 +700,7 @@
 														id="tab-1"
 														tabindex="-1"
 													>
-														Midday Slots
-													</button>
-													<button
-														class="tab-trigger group"
-														role="tab"
-														aria-selected="false"
-														aria-controls="panel-2"
-														id="tab-2"
-														tabindex="-1"
-													>
-														Evening Slots
+														Completed Events
 													</button>
 												</div>
 
@@ -786,169 +711,55 @@
 														role="tabpanel"
 														aria-labelledby="tab-0"
 													>
-														<div class="grid max-w-[476px] grid-cols-4 gap-4">
+														<div class="flex max-w-[698px] flex-wrap gap-4">
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="upcoming"
 																	value="1"
 																	class="peer hidden"
-																	disabled
+																	checked
 																/>
 
-																<span class="checkbox-group-item">10:00am</span>
+																<span class="checkbox-group-item py-0">
+																	All
+																</span>
 															</label>
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="upcoming"
 																	value="1"
 																	class="peer hidden"
-																	disabled
 																/>
 
-																<span class="checkbox-group-item">9:00am</span>
+																<span class="checkbox-group-item py-0">
+																	Today
+																</span>
 															</label>
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="upcoming"
 																	value="1"
 																	class="peer hidden"
 																/>
 
-																<span class="checkbox-group-item">9:00am</span>
+																<span class="checkbox-group-item py-0">
+																	This Week
+																</span>
 															</label>
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="upcoming"
 																	value="1"
 																	class="peer hidden"
 																/>
 
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																	disabled
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">9:00am</span>
+																<span class="checkbox-group-item py-0">
+																	This Month
+																</span>
 															</label>
 														</div>
 													</div>
@@ -959,1038 +770,68 @@
 														aria-labelledby="tab-1"
 														aria-hidden="true"
 													>
-														<div class="grid max-w-[476px] grid-cols-4 gap-4">
+														<div class="flex max-w-[698px] flex-wrap gap-4">
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="completed"
 																	value="1"
 																	class="peer hidden"
-																	disabled
+																	checked
 																/>
 
-																<span class="checkbox-group-item">2:00pm</span>
+																<span class="checkbox-group-item py-0">
+																	All
+																</span>
 															</label>
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="completed"
 																	value="1"
 																	class="peer hidden"
-																	disabled
 																/>
 
-																<span class="checkbox-group-item">2:00pm</span>
+																<span class="checkbox-group-item py-0">
+																	Today
+																</span>
 															</label>
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="completed"
 																	value="1"
 																	class="peer hidden"
 																/>
 
-																<span class="checkbox-group-item">2:00pm</span>
+																<span class="checkbox-group-item py-0">
+																	This Week
+																</span>
 															</label>
 															<label class="flex cursor-pointer">
 																<input
 																	type="radio"
-																	name="available_time"
+																	name="completed"
 																	value="1"
 																	class="peer hidden"
 																/>
 
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																	disabled
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">2:00pm</span>
-															</label>
-														</div>
-													</div>
-													<div
-														id="panel-2"
-														class="tab-content animate-fadeIn hidden"
-														role="tabpanel"
-														aria-labelledby="tab-2"
-														aria-hidden="true"
-													>
-														<div class="grid max-w-[476px] grid-cols-4 gap-4">
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																	disabled
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																	disabled
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																	disabled
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
-															</label>
-															<label class="flex cursor-pointer">
-																<input
-																	type="radio"
-																	name="available_time"
-																	value="1"
-																	class="peer hidden"
-																/>
-
-																<span class="checkbox-group-item">6:00pm</span>
+																<span class="checkbox-group-item py-0">
+																	This Month
+																</span>
 															</label>
 														</div>
 													</div>
 												</div>
 											</div>
-
-											<button class="btn btn-secondary mt-4">
-												<span>Enter Your Start Time</span>
-											</button>
 										</div>
+									</div>
 
-										<!-- Duration -->
-										<div class="space-y-2">
-											<p class="font-bold">Duration</p>
+									<div class="space-y-6 lg:space-y-4">
+										<div class="space-y-2 lg:space-y-4">
+											<h3>Mon, October 15</h3>
 
-											<div class="grid max-w-[476px] grid-cols-4 gap-4">
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-														disabled
-													/>
-
-													<span class="checkbox-group-item py-0">15 mins</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-														disabled
-													/>
-
-													<span class="checkbox-group-item py-0">30 mins</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">45 mins</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">1 hr</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">
-														1 hr 30 mins
-													</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-														disabled
-													/>
-
-													<span class="checkbox-group-item py-0">2 hrs</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">
-														2 hr 30 mins
-													</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="duration"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">3 hrs</span>
-												</label>
-											</div>
-											<button class="btn btn-secondary mt-4">
-												<span>Enter Your Duration</span>
-											</button>
-										</div>
-
-										<!-- Event Frequency -->
-										<div class="space-y-2">
-											<p class="font-bold">Event Frequency</p>
-
-											<div class="flex max-w-[476px] flex-wrap gap-4">
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="frequency"
-														value="1"
-														class="peer hidden"
-														disabled
-													/>
-
-													<span class="checkbox-group-item py-0">
-														Does not Repeat
-													</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="frequency"
-														value="1"
-														class="peer hidden"
-														disabled
-													/>
-
-													<span class="checkbox-group-item py-0">Daily</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="frequency"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">
-														Every weekday
-													</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="frequency"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">Weekly</span>
-												</label>
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="frequency"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">Monthly</span>
-												</label>
-
-												<label class="flex cursor-pointer">
-													<input
-														type="radio"
-														name="frequency"
-														value="1"
-														class="peer hidden"
-													/>
-
-													<span class="checkbox-group-item py-0">
-														Every three days, until August 23, 2025
-													</span>
-												</label>
-											</div>
-
-											<button class="btn btn-secondary mt-4">
-												<span>Custom Event Frequency</span>
-											</button>
-										</div>
-
-										<!-- Divider -->
-										<hr class="border-grey-70" />
-
-										<!-- Participants  -->
-										<div class="space-y-6 lg:space-y-5">
-											<div class="space-y-2">
-												<h3>Participants (0 Guest)</h3>
-												<p class="text-grey-40 dark:text-grey-80">
-													You haven’t added anyone yet
-												</p>
-											</div>
-
-											<div class="overflow-hidden">
-												<div
-													class="flex w-full items-center justify-between gap-3"
-												>
-													<div class="flex shrink items-center gap-3 py-2">
-														<div class="flex items-center gap-2">
-															<div
-																class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-															>
-																<span class="text-xs font-bold text-white">
-																	TN
-																</span>
-																<div
-																	class="notification-bottom border-primary-20"
-																>
-																	2
-																</div>
-															</div>
-														</div>
-														<div>
-															<p class="line-clamp-1">
-																Fluency Course: Level B2
-															</p>
-														</div>
-													</div>
-													<button
-														class="btn btn-text dark:hover:text-primary-70 dark:text-white"
-													>
-														<span>Remove</span>
-													</button>
-												</div>
-												<div
-													class="flex w-full items-center justify-between gap-3"
-												>
-													<div class="flex shrink items-center gap-3 py-2">
-														<div class="flex items-center gap-2">
-															<div
-																class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-															>
-																<span class="text-xs font-bold text-white">
-																	TN
-																</span>
-															</div>
-														</div>
-														<div>
-															<p class="line-clamp-1">Firstname Lastname</p>
-															<p
-																class="text-grey-50 dark:text-grey-70 line-clamp-1 max-w-fit text-sm break-all"
-															>
-																useremail@mail.com
-															</p>
-														</div>
-													</div>
-													<button
-														class="btn btn-text dark:hover:text-primary-70 dark:text-white"
-													>
-														<span>Remove</span>
-													</button>
-												</div>
-												<div
-													class="flex w-full items-center justify-between gap-3"
-												>
-													<div class="flex shrink items-center gap-3 py-2">
-														<div class="flex items-center gap-2">
-															<div
-																class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-															>
-																<span class="text-xs font-bold text-white">
-																	TN
-																</span>
-															</div>
-														</div>
-														<div>
-															<p class="line-clamp-1">Firstname Lastname</p>
-															<p
-																class="text-grey-50 dark:text-grey-70 line-clamp-1 max-w-fit text-sm break-all"
-															>
-																useremail@mail.com
-															</p>
-														</div>
-													</div>
-													<button
-														class="btn btn-text dark:hover:text-primary-70 dark:text-white"
-													>
-														<span>Remove</span>
-													</button>
-												</div>
-												<div
-													class="flex w-full items-center justify-between gap-3"
-												>
-													<div class="flex shrink items-center gap-3 py-2">
-														<div class="flex items-center gap-2">
-															<div
-																class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-															>
-																<span class="text-xs font-bold text-white">
-																	TN
-																</span>
-															</div>
-														</div>
-														<div>
-															<p class="line-clamp-1">Firstname Lastname</p>
-															<p
-																class="text-grey-50 dark:text-grey-70 line-clamp-1 max-w-fit text-sm break-all"
-															>
-																useremail@mail.com
-															</p>
-														</div>
-													</div>
-													<button
-														class="btn btn-text dark:hover:text-primary-70 dark:text-white"
-													>
-														<span>Remove</span>
-													</button>
-												</div>
-												<div
-													class="flex w-full items-center justify-between gap-3"
-												>
-													<div class="flex shrink items-center gap-3 py-2">
-														<div class="flex items-center gap-2">
-															<div
-																class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-															>
-																<span class="text-xs font-bold text-white">
-																	TN
-																</span>
-															</div>
-														</div>
-														<div>
-															<p class="line-clamp-1">Firstname Lastname</p>
-															<p
-																class="text-grey-50 dark:text-grey-70 line-clamp-1 max-w-fit text-sm break-all"
-															>
-																useremail@mail.com
-															</p>
-														</div>
-													</div>
-													<button
-														class="btn btn-text dark:hover:text-primary-70 dark:text-white"
-													>
-														<span>Remove</span>
-													</button>
-												</div>
-											</div>
-
-											<!-- .invalid / .valid -->
-											<label
-												for="add_participants"
-												class="label label-with-icon group/label"
-											>
-												<p class="label-text">Add Participants (optional)</p>
-
-												<div
-													class="search-input-wrapper participants-input-wrapper relative h-[52px]"
-												>
-													<div
-														id="add-participants-input-container"
-														class="search-input-container add-participants-input-container"
-													>
-														<svg
-															width="20"
-															height="20"
-															viewBox="0 0 20 20"
-															fill="none"
-															xmlns="http://www.w3.org/2000/svg"
-														>
-															<path
-																class="dark:fill-grey-80"
-																d="M8 0C12.4183 0 16 3.58172 16 8C16.0022 9.77666 15.4066 11.5028 14.3096 12.9004L19.71 18.29C19.8993 18.4778 20.0059 18.7334 20.0059 19C20.0059 19.2666 19.8993 19.5222 19.71 19.71C19.5222 19.8993 19.2666 20.0059 19 20.0059C18.7334 20.0059 18.4778 19.8993 18.29 19.71L12.9004 14.3096C11.5028 15.4066 9.77666 16.0022 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2Z"
-																fill="#4D4D4D"
-															/>
-														</svg>
-
-														<input
-															id="add-participants-input"
-															type="text"
-															placeholder="Enter mane or email here..."
-															class="search-input add-participants-input"
-															autocomplete="off"
-														/>
-														<button
-															id="add-participants-clearBtn"
-															class="hidden"
-														>
-															<svg
-																width="24"
-																height="24"
-																viewBox="0 0 24 24"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-															>
-																<path
-																	class="dark:fill-grey-80"
-																	d="M4.92809 4.93004C8.85188 1.14032 15.0883 1.19477 18.9457 5.05211C22.803 8.90945 22.8574 15.1459 19.0677 19.0697C15.144 22.8594 8.9075 22.8049 5.05016 18.9476C1.19282 15.0903 1.13837 8.85383 4.92809 4.93004ZM17.6576 6.3402C14.5325 3.21856 9.46885 3.22015 6.34605 6.3441C3.22344 9.46804 3.2234 14.5317 6.34605 17.6556C9.46885 20.7796 14.5325 20.7812 17.6576 17.6595C19.1722 16.1656 20.0248 14.1268 20.0248 11.9994C20.0246 9.87215 19.1721 7.83402 17.6576 6.3402ZM14.8382 7.73961C15.0919 7.48617 15.4616 7.38703 15.808 7.47984C16.1544 7.57273 16.4251 7.8434 16.5179 8.1898C16.6107 8.53618 16.5116 8.90588 16.2582 9.15953L13.4076 11.9994L16.2582 14.8402C16.4473 15.0279 16.5541 15.2837 16.5541 15.5502C16.554 15.8167 16.4474 16.0724 16.2582 16.2601C16.0695 16.4472 15.8139 16.5516 15.5482 16.5502C15.2826 16.5517 15.0269 16.4471 14.8382 16.2601L11.9974 13.4095L9.15758 16.2601C8.96889 16.4471 8.71328 16.5517 8.44762 16.5502C8.18193 16.5516 7.92631 16.4472 7.73766 16.2601C7.54842 16.0724 7.44185 15.8167 7.44176 15.5502C7.44176 15.2837 7.54853 15.0279 7.73766 14.8402L10.5882 11.9994L7.73766 9.15953C7.48418 8.90588 7.38508 8.5362 7.47789 8.1898C7.57075 7.84338 7.84143 7.57271 8.18785 7.47984C8.53424 7.38703 8.90393 7.48613 9.15758 7.73961L11.9974 10.5902L14.8382 7.73961Z"
-																	fill="#4D4D4D"
-																/>
-															</svg>
-														</button>
-													</div>
-													<div
-														id="add-participants-dropdown"
-														class="search-dropdown add-participants-dropdown hidden"
-													>
-														<div>
-															<label
-																class="flex cursor-pointer items-center justify-between gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#3E334D]"
-															>
-																<input type="checkbox" class="peer hidden" />
-
-																<div
-																	class="flex items-center justify-between gap-3 select-none peer-checked:opacity-50"
-																>
-																	<div class="flex shrink items-center gap-3">
-																		<div class="flex items-center gap-2">
-																			<div
-																				class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-																			>
-																				<span
-																					class="text-xs font-bold text-white"
-																				>
-																					TN
-																				</span>
-																				<div class="notification-bottom">2</div>
-																			</div>
-																		</div>
-																		<div>
-																			<p class="line-clamp-1">
-																				Fluency Course: Level B2
-																			</p>
-																		</div>
-																	</div>
-																</div>
-
-																<svg
-																	class="hidden peer-checked:block"
-																	xmlns="http://www.w3.org/2000/svg"
-																	width="21"
-																	height="17"
-																	viewBox="0 0 21 17"
-																	fill="none"
-																>
-																	<path
-																		class="fill-grey-50 dark:peer-checked:fill-white"
-																		d="M19.7263 2.6799L6.72628 16.6799C6.53781 16.8831 6.27344 16.999 5.99628 16.9999C5.73048 17.0014 5.475 16.8971 5.28628 16.7099L0.286279 11.7099C-0.105843 11.3178 -0.105843 10.682 0.286279 10.2899C0.678401 9.89778 1.31416 9.89778 1.70628 10.2899L5.99628 14.5599L18.2663 1.3199C18.5016 1.02967 18.8791 0.894859 19.2451 0.970368C19.611 1.04588 19.9044 1.31911 20.0056 1.67879C20.1068 2.03847 19.9991 2.42459 19.7263 2.6799Z"
-																	/>
-																</svg>
-															</label>
-															<label
-																class="flex cursor-pointer items-center justify-between gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#3E334D]"
-															>
-																<input type="checkbox" class="peer hidden" />
-
-																<div
-																	class="flex items-center justify-between gap-3 select-none peer-checked:opacity-50"
-																>
-																	<div class="flex shrink items-center gap-3">
-																		<div class="flex items-center gap-2">
-																			<div
-																				class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-																			>
-																				<span
-																					class="text-xs font-bold text-white"
-																				>
-																					TN
-																				</span>
-																			</div>
-																		</div>
-																		<div>
-																			<p class="line-clamp-1">
-																				Fluency Course: Level B2
-																			</p>
-																			<p
-																				class="text-grey-50 dark:text-grey-70 line-clamp-1 max-w-fit text-sm break-all"
-																			>
-																				useremail@mail.com
-																			</p>
-																		</div>
-																	</div>
-																</div>
-
-																<svg
-																	class="hidden peer-checked:block"
-																	xmlns="http://www.w3.org/2000/svg"
-																	width="21"
-																	height="17"
-																	viewBox="0 0 21 17"
-																	fill="none"
-																>
-																	<path
-																		class="fill-grey-50 dark:peer-checked:fill-white"
-																		d="M19.7263 2.6799L6.72628 16.6799C6.53781 16.8831 6.27344 16.999 5.99628 16.9999C5.73048 17.0014 5.475 16.8971 5.28628 16.7099L0.286279 11.7099C-0.105843 11.3178 -0.105843 10.682 0.286279 10.2899C0.678401 9.89778 1.31416 9.89778 1.70628 10.2899L5.99628 14.5599L18.2663 1.3199C18.5016 1.02967 18.8791 0.894859 19.2451 0.970368C19.611 1.04588 19.9044 1.31911 20.0056 1.67879C20.1068 2.03847 19.9991 2.42459 19.7263 2.6799Z"
-																	/>
-																</svg>
-															</label>
-															<label
-																class="flex cursor-pointer items-center justify-between gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#3E334D]"
-															>
-																<input type="checkbox" class="peer hidden" />
-
-																<div
-																	class="flex items-center justify-between gap-3 select-none peer-checked:opacity-50"
-																>
-																	<div class="flex shrink items-center gap-3">
-																		<div class="flex items-center gap-2">
-																			<div
-																				class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-																			>
-																				<span
-																					class="text-xs font-bold text-white"
-																				>
-																					TN
-																				</span>
-																				<div class="notification-bottom">2</div>
-																			</div>
-																		</div>
-																		<div>
-																			<p class="line-clamp-1">
-																				Fluency Course: Level B2
-																			</p>
-																		</div>
-																	</div>
-																</div>
-
-																<svg
-																	class="hidden peer-checked:block"
-																	xmlns="http://www.w3.org/2000/svg"
-																	width="21"
-																	height="17"
-																	viewBox="0 0 21 17"
-																	fill="none"
-																>
-																	<path
-																		class="fill-grey-50 dark:peer-checked:fill-white"
-																		d="M19.7263 2.6799L6.72628 16.6799C6.53781 16.8831 6.27344 16.999 5.99628 16.9999C5.73048 17.0014 5.475 16.8971 5.28628 16.7099L0.286279 11.7099C-0.105843 11.3178 -0.105843 10.682 0.286279 10.2899C0.678401 9.89778 1.31416 9.89778 1.70628 10.2899L5.99628 14.5599L18.2663 1.3199C18.5016 1.02967 18.8791 0.894859 19.2451 0.970368C19.611 1.04588 19.9044 1.31911 20.0056 1.67879C20.1068 2.03847 19.9991 2.42459 19.7263 2.6799Z"
-																	/>
-																</svg>
-															</label>
-															<label
-																class="flex cursor-pointer items-center justify-between gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#3E334D]"
-															>
-																<input type="checkbox" class="peer hidden" />
-
-																<div
-																	class="flex items-center justify-between gap-3 select-none peer-checked:opacity-50"
-																>
-																	<div class="flex shrink items-center gap-3">
-																		<div class="flex items-center gap-2">
-																			<div
-																				class="relative flex size-8 items-center justify-center rounded-full bg-[#367D7D]"
-																			>
-																				<span
-																					class="text-xs font-bold text-white"
-																				>
-																					TN
-																				</span>
-																			</div>
-																		</div>
-																		<div>
-																			<p class="line-clamp-1">
-																				Fluency Course: Level B2
-																			</p>
-																			<p
-																				class="text-grey-50 dark:text-grey-70 line-clamp-1 max-w-fit text-sm break-all"
-																			>
-																				useremail@mail.com
-																			</p>
-																		</div>
-																	</div>
-																</div>
-
-																<svg
-																	class="hidden peer-checked:block"
-																	xmlns="http://www.w3.org/2000/svg"
-																	width="21"
-																	height="17"
-																	viewBox="0 0 21 17"
-																	fill="none"
-																>
-																	<path
-																		class="fill-grey-50 dark:peer-checked:fill-white"
-																		d="M19.7263 2.6799L6.72628 16.6799C6.53781 16.8831 6.27344 16.999 5.99628 16.9999C5.73048 17.0014 5.475 16.8971 5.28628 16.7099L0.286279 11.7099C-0.105843 11.3178 -0.105843 10.682 0.286279 10.2899C0.678401 9.89778 1.31416 9.89778 1.70628 10.2899L5.99628 14.5599L18.2663 1.3199C18.5016 1.02967 18.8791 0.894859 19.2451 0.970368C19.611 1.04588 19.9044 1.31911 20.0056 1.67879C20.1068 2.03847 19.9991 2.42459 19.7263 2.6799Z"
-																	/>
-																</svg>
-															</label>
-														</div>
-
-														<!-- Divider -->
-														<hr class="border-grey-70 mx-4 my-2" />
-
-														<button
-															type="button"
-															class="flex w-full cursor-pointer items-center gap-3 p-4 hover:bg-gray-100 dark:hover:bg-[#3E334D]"
-														>
-															<svg
-																width="24"
-																height="24"
-																viewBox="0 0 24 24"
-																fill="none"
-																xmlns="http://www.w3.org/2000/svg"
-															>
-																<path
-																	class="dark:fill-white"
-																	d="M12 6C14.2091 6 16 7.79086 16 10C16 10.9731 15.6518 11.8642 15.0742 12.5576C15.741 12.8432 16.2889 13.2288 16.7266 13.6914C17.6953 14.7155 18 15.9864 18 17C18 17.7683 18.0001 18.4999 18 19C18 19.3334 17.8336 19.6454 17.5566 19.8311C17.2083 20.0644 16.765 20.2373 16.3359 20.3701C15.8916 20.5075 15.3932 20.6224 14.8916 20.7139C13.8927 20.896 12.8103 21 12 21C11.1898 20.9999 10.108 20.8959 9.10938 20.7139C8.60758 20.6224 8.10845 20.5076 7.66406 20.3701C7.23487 20.2373 6.79164 20.0645 6.44336 19.8311C6.16702 19.6456 6.00046 19.3338 6 19.001C5.99931 18.5001 6 17.7672 6 17C6 15.4217 6.98635 13.576 8.98828 12.6299C8.37381 11.9266 8 11.0072 8 10C8 7.79104 9.79111 6.0003 12 6ZM12 14C9.02953 14.0003 8 15.9184 8 17C8 17.4905 7.99993 17.9651 8 18.374C8.07592 18.4017 8.16099 18.4309 8.25488 18.46C8.60209 18.5674 9.01958 18.6644 9.46777 18.7461C10.3692 18.9104 11.3296 18.9999 12 19C12.6702 19 13.6307 18.9104 14.5322 18.7461C14.9804 18.6644 15.3979 18.5674 15.7451 18.46C15.839 18.4309 15.9241 18.4017 16 18.374C16 17.9646 16 17.4898 16 17C16 16.3567 15.8047 15.6271 15.2734 15.0654C14.7578 14.5207 13.7989 14 12 14ZM7 4C8.21588 4 9.30446 4.54326 10.0381 5.39941C9.40774 5.66864 8.84461 6.06448 8.37891 6.55371C8.02 6.2115 7.53505 6 7 6C5.89568 6.0003 5 6.89561 5 8C5 9.10439 5.89568 9.9997 7 10H7.00098C7.00098 10.7156 7.15283 11.3953 7.42383 12.0107C7.28809 12.0041 7.1467 12 7 12C4.02953 12.0003 3 13.9184 3 15C3 15.4905 2.99993 15.9651 3 16.374C3.07592 16.4017 3.16099 16.4309 3.25488 16.46C3.60209 16.5674 4.01958 16.6644 4.46777 16.7461C4.65102 16.7795 4.83729 16.8079 5.02246 16.835C5.00889 16.9883 5.00098 17.1389 5.00098 17.2861C5.00098 17.6845 5.00108 18.2476 5.00098 18.8516C4.70278 18.8122 4.40225 18.7673 4.10938 18.7139C3.60758 18.6224 3.10845 18.5076 2.66406 18.3701C2.23487 18.2373 1.79164 18.0645 1.44336 17.8311C1.16702 17.6456 1.00046 17.3338 1 17.001C0.999313 16.5001 1 15.7672 1 15C1 13.4217 1.98635 11.576 3.98828 10.6299C3.37381 9.92665 3 9.00723 3 8C3 5.79104 4.79111 4.0003 7 4ZM17 4C19.2091 4 21 5.79086 21 8C21 8.97306 20.6518 9.86416 20.0742 10.5576C20.741 10.8432 21.2889 11.2288 21.7266 11.6914C22.6953 12.7155 23 13.9864 23 15C23 15.7683 23.0001 16.4999 23 17C23 17.3334 22.8336 17.6454 22.5566 17.8311C22.2083 18.0644 21.765 18.2373 21.3359 18.3701C20.8916 18.5075 20.3932 18.6224 19.8916 18.7139C19.599 18.7672 19.299 18.8123 19.001 18.8516C19.001 18.2476 19.001 17.6845 19.001 17.2861C19.001 17.1382 18.9939 16.987 18.9844 16.833C19.1673 16.8062 19.3512 16.7791 19.5322 16.7461C19.9804 16.6644 20.3979 16.5674 20.7451 16.46C20.839 16.4309 20.9241 16.4017 21 16.374C21 15.9646 21 15.4898 21 15C21 14.3567 20.8047 13.6271 20.2734 13.0654C19.7578 12.5207 18.7989 12 17 12C16.8534 12 16.7115 12.0056 16.5742 12.0146C16.8465 11.398 17.001 10.7174 17.001 10C18.1052 9.99964 19 9.10435 19 8C19 6.89543 18.1046 6 17 6C16.465 6.00014 15.98 6.2114 15.6211 6.55371C15.1553 6.06449 14.5924 5.66856 13.9619 5.39941C14.6955 4.54319 15.7842 4.00016 17 4ZM12 8C10.8957 8.0003 10 8.89561 10 10C10 11.1044 10.8957 11.9997 12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8Z"
-																	fill="#808080"
-																/>
-															</svg>
-
-															<p>Add Participants From List</p>
-														</button>
-													</div>
-												</div>
-											</label>
-										</div>
-
-										<!-- Divider -->
-										<hr class="border-grey-70" />
-
-										<!-- Event Link -->
-										<div class="space-y-6 lg:space-y-5">
-											<h3>Event Link</h3>
-
-											<!-- .invalid / .valid -->
-											<label for="event_link" class="label group/label">
-												<p class="label-text">Url Link (optional)</p>
-												<textarea
-													type="text"
-													class="input peer h-full min-h-[100px] resize-none"
-													name="event_link"
-													id="event_link"
-													placeholder="Add event link here..."
-												></textarea>
-
-												<p class="input-error">
-													<svg
-														width="16"
-														height="16"
-														viewBox="0 0 16 16"
-														fill="none"
-														xmlns="http://www.w3.org/2000/svg"
-													>
-														<path
-															d="M8 0C12.4183 0 16 3.58172 16 8C16 10.1217 15.1575 12.1569 13.6572 13.6572C12.1569 15.1575 10.1217 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8.19043 11.0195C7.86419 10.9542 7.52644 11.0559 7.29004 11.29C7.10286 11.4788 6.99846 11.7342 7 12C6.99846 12.2658 7.10286 12.5212 7.29004 12.71C7.38724 12.7983 7.49893 12.8693 7.62012 12.9199C7.86212 13.0269 8.13788 13.0269 8.37988 12.9199C8.50106 12.8693 8.61276 12.7983 8.70996 12.71C8.89715 12.5212 9.00154 12.2658 9 12C8.99632 11.7352 8.89269 11.4817 8.70996 11.29C8.66244 11.247 8.61195 11.2068 8.55957 11.1699C8.50392 11.1322 8.44348 11.1019 8.37988 11.0801C8.32046 11.0497 8.25652 11.0288 8.19043 11.0195ZM8 3C7.44772 3 7 3.33579 7 3.75V8.25C7 8.66421 7.44772 9 8 9C8.55229 9 9 8.66421 9 8.25V3.75C9 3.33579 8.55229 3 8 3Z"
-															fill="#DF064F"
-														/>
-													</svg>
-													Error Message
-												</p>
-											</label>
-										</div>
-
-										<!-- Divider -->
-										<hr class="border-grey-70" />
-
-										<!-- Event Notes -->
-										<div class="space-y-6 lg:space-y-5">
-											<h3>Event Notes</h3>
-
-											<!-- .invalid / .valid -->
-											<label for="event_notes" class="label group/label">
-												<p class="label-text">Notes</p>
-												<textarea
-													type="text"
-													class="input peer h-full min-h-[100px] resize-none"
-													name="event_notes"
-													id="event_notes"
-													placeholder="Add some event details here..."
-												></textarea>
-
-												<p class="input-error">
-													<svg
-														width="16"
-														height="16"
-														viewBox="0 0 16 16"
-														fill="none"
-														xmlns="http://www.w3.org/2000/svg"
-													>
-														<path
-															d="M8 0C12.4183 0 16 3.58172 16 8C16 10.1217 15.1575 12.1569 13.6572 13.6572C12.1569 15.1575 10.1217 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0ZM8.19043 11.0195C7.86419 10.9542 7.52644 11.0559 7.29004 11.29C7.10286 11.4788 6.99846 11.7342 7 12C6.99846 12.2658 7.10286 12.5212 7.29004 12.71C7.38724 12.7983 7.49893 12.8693 7.62012 12.9199C7.86212 13.0269 8.13788 13.0269 8.37988 12.9199C8.50106 12.8693 8.61276 12.7983 8.70996 12.71C8.89715 12.5212 9.00154 12.2658 9 12C8.99632 11.7352 8.89269 11.4817 8.70996 11.29C8.66244 11.247 8.61195 11.2068 8.55957 11.1699C8.50392 11.1322 8.44348 11.1019 8.37988 11.0801C8.32046 11.0497 8.25652 11.0288 8.19043 11.0195ZM8 3C7.44772 3 7 3.33579 7 3.75V8.25C7 8.66421 7.44772 9 8 9C8.55229 9 9 8.66421 9 8.25V3.75C9 3.33579 8.55229 3 8 3Z"
-															fill="#DF064F"
-														/>
-													</svg>
-													Error Message
-												</p>
-											</label>
-										</div>
-
-										<!-- Buttons -->
-										<div class="flex items-start gap-3">
-											<button class="btn btn-primary">
-												<span>Create Event</span>
-											</button>
-											<button class="btn btn-secondary">
-												<span>Cancel</span>
-											</button>
+											<div class="space-y-2 lg:space-y-4"></div>
 										</div>
 									</div>
 								</div>

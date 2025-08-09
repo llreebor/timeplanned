@@ -172,7 +172,7 @@
 		@apply hover:shadow-btn border-grey-30 not-disabled:hover:bg-grey-95 not-disabled:active:bg-grey-90 text-grey-20 dark:border-grey-70 dark:hover:bg-primary-20/50! bg-white underline-offset-2 dark:bg-transparent dark:text-white;
 	}
 	.btn-text {
-		@apply not-disabled:hover:text-primary-40 not-disabled:active:bg-grey-90 text-grey-20 dark:text-grey-70 border-none bg-white p-1 underline-offset-2 not-disabled:hover:bg-transparent dark:bg-transparent;
+		@apply not-disabled:hover:text-primary-40 text-grey-20 dark:text-grey-70 border-none bg-transparent p-1 underline-offset-2 not-disabled:hover:bg-transparent;
 	}
 
 	/* Checkbox */

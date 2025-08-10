@@ -65,6 +65,8 @@
 	--gradient-profile:
 		0deg, #367d7d 0%, #367d7d 100%, 0deg, #bf4095 0%, #bf4095 100%, 0deg,
 		#cc4d33 0%, #cc4d33 100%, #945eba;
+	--gradient-white: 180deg, rgba(255, 255, 255, 0) 0%, #fff 75%;
+	--gradient-white: 180deg, rgba(255, 255, 255, 0) 0%, #fff 75%;
 
 	/* Shadows */
 	--shadow-header: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
@@ -172,7 +174,7 @@
 		@apply hover:shadow-btn border-grey-30 not-disabled:hover:bg-grey-95 not-disabled:active:bg-grey-90 text-grey-20 dark:border-grey-70 dark:hover:bg-primary-20/50! bg-white underline-offset-2 dark:bg-transparent dark:text-white;
 	}
 	.btn-text {
-		@apply not-disabled:hover:text-primary-40 text-grey-20 dark:text-grey-70 border-none bg-transparent p-1 underline-offset-2 not-disabled:hover:bg-transparent;
+		@apply not-disabled:hover:text-primary-40 dark:not-disabled:hover:text-primary-90 text-grey-20 dark:text-grey-70 border-none bg-transparent p-1 underline-offset-2 not-disabled:hover:bg-transparent;
 	}
 
 	/* Checkbox */
@@ -182,7 +184,7 @@
 
 	/* Event Details Info */
 	.event-details-info {
-		@apply border-l-secondary-50 [&.green-border]:border-tertiary-40 my-2 rounded border-l-4 px-2;
+		@apply border-l-secondary-50 [&.border-aqua]:border-tertiary-40 my-2 rounded border-l-4 px-2;
 	}
 
 	/* Input */
@@ -232,6 +234,20 @@
 	}
 	.tab-trigger {
 		@apply animate-fadeIn text-grey-20 [.active]:border-b-primary-40 -mb-px border-b-2 border-b-transparent pt-4 pb-1 text-[11px] uppercase transition-colors min-[374px]:px-2 min-[374px]:text-xs md:text-sm lg:pt-3 dark:text-white [.active]:font-semibold dark:[.active]:border-b-[#A68CD9];
+	}
+
+	/* Pagination */
+	.pagination {
+		@apply flex items-center gap-6;
+	}
+	.pagination-pages {
+		@apply flex items-center gap-3;
+	}
+	.pagination-button {
+		@apply text-grey-20 [.active]:bg-primary-40 dark:[.active]:text-primary-20 dark:[.active]:bg-primary-90 dark:hover:bg-primary-90/10 hover:bg-primary-95 disabled:text-grey-60 flex size-7 cursor-pointer items-center justify-center rounded-full text-sm font-semibold disabled:cursor-not-allowed disabled:hover:bg-transparent min-[374px]:size-10 dark:text-white [.active]:text-white;
+	}
+	.pagination-arrow {
+		@apply [&_path]:fill-grey-30 disabled:[&_path]:fill-grey-70 dark:[&_path]:fill-grey-70 dark:disabled:[&_path]:fill-grey-30 disabled:cursor-not-allowed;
 	}
 }
 
